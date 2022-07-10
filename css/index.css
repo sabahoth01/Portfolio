@@ -1,5 +1,4 @@
 /* Responsive settings */
-
 @import "/css/phones.css" screen and (min-width: 600px);
 @import "/css/tablets.css" screen and (min-width: 768px);
 @import "/css/laptop.css" screen and (min-width: 992px);
@@ -201,15 +200,21 @@
         margin-left: 30px;
     }
 
+    #about-me a{
+        text-decoration: none;
+        color: #2b0512;
+    }
+
+    #about-me a:hover{
+        color: white;
+    }
+
     #about-me button {
         margin: 90px 0 0 80px;
-        color: #2b0512;
-
     }
 
     #about-me button:hover {
         background-color: #2b0512;
-        color: white;
     }
 
     /* Projects */
@@ -225,7 +230,8 @@
     }
 
     #projects td{
-        padding: 30px;
+        padding: 30px 30px 30px 50px;
+
     }
 
     th {
@@ -255,7 +261,7 @@
         background-color: #2d9285;
         margin: 0 auto;
         padding: 50px;
-        height: 500px;
+        height: 550px;
         color: black;
     }
 
@@ -280,10 +286,10 @@
 
     #contacts strong {
         font-size: 25px;
-        padding-top: 30px;
-        left: 50%;
+        padding-top: 25px;
+       /* left: 50%;*/
         position: absolute;
-        color: #111111;
+        color: #f8a726;
     }
 
     .message {
@@ -317,6 +323,17 @@
         width: 44%;
         height: 30px;
         background-color: #153d3d;
+        cursor: pointer;
+    }
+
+    .submit:hover{
+        background-color: #ec6507;
+        color: white;
+    }
+
+    .submit:active {
+        box-shadow: 0 5px #070707;
+        transform: translateY(8px);
     }
 
     input[type=text], textarea, input[type = email], input[type = tel], input[type=submit] {
@@ -337,7 +354,10 @@
     }
 
     .address {
-        flex: 45%;
+        flex: 60%;
+    }
+    .contact-us{
+        flex: 40%;
     }
 
     .street {
@@ -356,6 +376,15 @@
 
     .copy {
         flex: 30%;
+    }
+
+    .copy a{
+        text-decoration: none;
+        color: #2d9285;
+    }
+
+    .copy a:hover {
+        color: white;
     }
 
     .from {
