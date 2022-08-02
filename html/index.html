@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <head>
-        <title>Brunnotte | Portfolio</title>
         <meta charset="UTF-8">
         <meta name="keywords" content="HTML, CSS, JavaScript">
         <meta name="author" content="Brunnotte Wasaulua ">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Brunnotte | Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
         <link rel="stylesheet" href="/css/index.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="/js/index.js" type="text/javascript"></script>
@@ -21,7 +22,6 @@
                     <li><a href="#about-me">About</a></li>
                     <li><a href="#projects">Portfolio</a></li>
                     <li><a href="#contacts">Contact</a></li>
-                    <!--<li><a href="/html/Other.html" target="_blank">Other</a></li>-->
                 </ul>
         </nav>
     </header>
@@ -30,7 +30,8 @@
     <!-- 1. Home -->
     <div id="home" class="header flex-container ">
         <div class="myName">
-            <p>Hello... &nbsp;I'm<br/><strong>Brunnotte<br/>Wasaulua</strong><br/></p>
+            <p>Hello... &nbsp;I'm<br/>
+                <strong class="animated">Brunnotte<br/>Wasaulua</strong><br/></p>
             <p></p>
             <button>
                 <a href="#about-me" style="vertical-align:middle; color: white"><span>Learn more...</span></a>
@@ -43,33 +44,32 @@
 
     <!-- 2. About me -->
     <div id="about-me" class="about-me">
-        <div>
-            <table>
-                <tr>
-                    <td class="icons">
-                        <img src="/img/avatar2.jpg" alt="avatar" class="icon-avatar">
-                    </td>
-                    <p></p>
-                    <td><i><p></p>I'm a junior front-end developer.<br/>
-                        I know how to use various technologies,<br/>
-                        frameworks and programming languages<br/>
-                        specifically according to the task given to me.
-                        <p></p>
-                            Being a diligent, hardworking and
-                            result <br/>oriented lady, I always work towards<br/>
-                            achieving best result on each project <br/>I lay my hands on.</i>
-                        <p></p>
-                        <button class="see-more"><a href="/doc/resume.pdf" target="_blank">Open my resume
-                            <i class="fa fa-envelope-open-o"></i></a>
-                        </button>
-                    </td>
-                </tr>
-            </table>
+        <div class="flex-container">
+            <div class="icons">
+                <img src="/img/avatar2.jpg" alt="avatar" class="icon-avatar ">
+            </div>
+
+            <div class="about-me__text">
+                <i><p></p>I'm a junior front-end developer.<br/>
+                I know how to use various technologies,<br/>
+                frameworks and programming languages<br/>
+                specifically according to the task given to me.
+                <p></p>
+                Being a diligent, hardworking and
+                result <br/>oriented lady, I always work towards<br/>
+                achieving best result on each project <br/>I lay my hands on.</i><br/>
+                <p>
+                    <a href="/doc/resume.pdf" target="_blank">Open my resume
+                        <i class="fa fa-envelope-open-o"></i>
+                    </a>
+                </p>
+            </div>
         </div>
     </div>
 
-            <!-- 4. Projects -->
-    <div id="projects" class="flex-container">
+    <!-- 4. Projects -->
+    <div id="projects" class=" display__column">
+        <div class="project-table">
         <table>
             <caption><strong>My projects</strong></caption>
             <tr>
@@ -91,23 +91,23 @@
                     Website for advertisements
                 </td>
             </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <button>
-                        <a href="/html/projects.html" style="vertical-align:middle; color: white"><span>Learn more...</span></a>
-                    </button>
-                </td><td></td>
-            </tr>
         </table>
+        </div>
+        <div class="see-more">
+            <button>
+                <a href="/html/projects.html" target="_blank" style="vertical-align:middle; color: white">
+                    <span>Learn more...</span>
+                </a>
+            </button>
+        </div>
     </div>
 
             <!-- 4. Contacts -->
     <div id="contacts">
-        <strong>Get in touch...</strong>
         <div class="contact flex-container">
             <div class="address display__column">
                 <div class="street">
+                    <strong>Get in touch...</strong>
                     <ul>
                         <li><i class="fa fa-solid fa-map-marker"></i> Petrogradskiy district,<br/>
                             Saint-Petersburg, Russia.<br/>
@@ -160,15 +160,15 @@
             </div>
     </div>
 
+
     <!-- Footer -->
     <div id="footer" class="flex-container">
         <div class="copy">
             2022 &copy; All right reserved.<br/>
-            <a href="/html/credit.html"
-               target="popup"
-               onclick="window.open('/html/credit.html','popup','width=400,height=400'); return false;">
+            <!-- modal -->
+            <button id="btn-modal" onclick="open_modal()">
                 Accreditations
-            </a>
+            </button>
         </div>
         <div class="from">From <span class="heart">&#10084;</span><br/>by Brunnotte</div>
         <div class="social-media">
@@ -178,5 +178,24 @@
         </div>
     </div>
 
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- Modal header -->
+            <strong class="modal-header">Accreditations</strong><br/>
+            <div>
+                <strong>
+                    <br/>Illustrations and avatars used in this portfolio are copyright free and were downloaded from:
+                </strong>
+                <ul>
+                    <li><a href="https://undraw.co/search">undraw</a><br/></li>
+                    <li><a href='https://www.freepik.com/vectors/'>freepik</a></li>
+                    <li><a href="https://giphy.com/gifs/Pluralsight-computer-technology-coding-L1R1tvI9svkIWwpVYr">via GIPHY</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     </body>
 </html>

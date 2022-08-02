@@ -1,19 +1,29 @@
-/* Responsive settings */
-@import "/css/phones.css" screen and (min-width: 600px);
-@import "/css/tablets.css" screen and (min-width: 768px);
-@import "/css/laptop.css" screen and (min-width: 992px);
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) {
     * {
         box-sizing: border-box;
     }
 
-    body {
+    body{
         font-family: "Times New Roman", cursive;
         margin: 0;
         padding: 0;
         background-color: black;
+        overflow-x: hidden;
+        animation: fadeInAnimation;
+        animation-delay: 2s;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 
     /* Scroll bar customized */
@@ -35,7 +45,7 @@
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: #c0bfbf;
+        background: #385a64;
     }
 
     p, h3, b {
@@ -135,14 +145,48 @@
 
     }
 
-    #home img {
-        width: 60vw;
-        padding-left: 50px;
+    .animated
+    {
+        text-transform: uppercase;
+        background-image: linear-gradient(
+                -225deg,
+                #231557 0%,
+                #44107a 29%,
+                #ff1361 67%,
+                #fff800 100%
+        );
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 2s linear 3;
+        display: inline-block;
+    }
 
+    @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    #home img {
+        width: 54vw;
+        padding-left: 50px;
     }
 
     #home .frontend-img {
         float: right;
+        position: relative;
+        animation-name: frontend-img;
+        animation-duration: 4s;
+    }
+
+    @keyframes frontend-img {
+        0%   { left:0; top:0;}
+        50%  { left:200px; top:0px;}
+        100% { left:0px; top:0px;}
     }
 
     #home button {
@@ -176,50 +220,61 @@
 
     #about-me {
         background-color: #edc0ad;
-        color: #f1f1f1;
     }
 
     /* About me */
-    table {
-        margin: 20px auto;
-        color: white;
-    }
 
-    td {
-        padding: 70px;
-        font-size: 23px;
-    }
-
-    #about-me td {
-        color: black;
-        text-align: left;
+    .icons{
+        flex: 40%;
+        margin-left: 10%;
+        padding: 5% 0;
     }
 
     #about-me img {
-        width: 450px;
-        margin-left: 30px;
+        width: 85%;
+    }
+
+    .about-me__text{
+        flex: 40%;
+        padding-top: 12%;
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: 1s all ease;
+        font-size: 25px;
+    }
+
+    .about-me__text.active{
+        transform: translateY(0);
+        opacity: 1;
     }
 
     #about-me a{
         text-decoration: none;
         color: #2b0512;
+        background-color: black;
+        padding: 10px;
+        border-radius: 5px;
     }
 
     #about-me a:hover{
-        color: white;
-    }
-
-    #about-me button {
-        margin: 90px 0 0 80px;
-    }
-
-    #about-me button:hover {
-        background-color: #2b0512;
+        color: #f8a21a;
     }
 
     /* Projects */
     #projects {
         background-color: black;
+        height: auto;
+    }
+
+    table {
+        margin: 20px auto;
+    }
+
+    td {
+        padding: 70px;
+        font-size: 23px;
+
     }
 
     #projects table {
@@ -256,12 +311,17 @@
         border-right: 2px solid #ec6507;
     }
 
+    #projects .see-more{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
     /* Contact */
     #contacts {
         background-color: #2d9285;
         margin: 0 auto;
+        height: auto;
         padding: 50px;
-        height: 550px;
         color: black;
     }
 
@@ -269,6 +329,10 @@
         display: flex;
         flex-direction: column;
         margin: 100px 0;
+    }
+
+    #contacts img{
+        padding-top: 30px;
     }
 
     #contacts li {
@@ -286,9 +350,8 @@
 
     #contacts strong {
         font-size: 25px;
-        padding-top: 25px;
+        padding-top: 35px;
        /* left: 50%;*/
-        position: absolute;
         color: #f8a726;
     }
 
@@ -374,16 +437,72 @@
         text-align: center;
     }
 
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        font-size: 23px;
+        color: black;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        color: black;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+    #footer button {
+        background: black;
+        border: none;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
     .copy {
         flex: 30%;
     }
 
-    .copy a{
+    .copy button{
         text-decoration: none;
         color: #2d9285;
     }
 
-    .copy a:hover {
+    .copy button:hover {
         color: white;
     }
 
