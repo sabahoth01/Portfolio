@@ -9,7 +9,7 @@
         margin: 0;
         padding: 0;
         background-color: black;
-        overflow-x: hidden;
+        overflow: auto;
         animation: fadeInAnimation;
         animation-delay: 2s;
         animation-duration: 5s;
