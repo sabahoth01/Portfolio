@@ -2,7 +2,13 @@
 
 My portfolio
 
-I have not yet added the responsive design.<br/>
+## Techno
+
+- HTML5
+- CSS
+- JS
+- Tilda
+- Wix
 
 ## Web view
 [portfolio](https://Portfolio.brunnottewasaul.repl.co)
