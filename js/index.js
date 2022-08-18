@@ -1,5 +1,14 @@
+//responsive nav-container bar
+function icon_reveal() {
+    let x = document.getElementById("navbar");
+    if (x.className === "nav-container") {
+        x.className += " responsive";
+    } else {
+        x.className = "nav-container";
+    }
+}
 
-
+//content fade on scrolling
 function fade() {
     let fadeInOut = document.querySelectorAll(".about-me__text");
 
@@ -18,16 +27,16 @@ function fade() {
 
 window.addEventListener("scroll", fade);
 
-
+//modal
 function open_modal(){
         // Get the modal
-        var modal = document.getElementById("myModal");
+        let modal = document.getElementById("myModal");
 
         // Get the button that opens the modal
-        var btn = document.getElementById("btn-modal");
+        let btn = document.getElementById("btn-modal");
 
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        let span = document.getElementsByClassName("close")[0];
 
         // When the user clicks the button, open the modal
         btn.onclick = function() {
@@ -44,5 +53,5 @@ function open_modal(){
                 if (event.target === modal) {
                 modal.style.display = "none";
             }
-            }
+        }
 }
